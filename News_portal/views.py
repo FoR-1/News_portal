@@ -1,13 +1,13 @@
 from datetime import datetime
 from django.views.generic import ListView, DetailView
-from .models import Post
+from .models import Category
 
 
-class PostList(ListView):
-    model = Post
-    ordering = '-time_in'
-    template_name = 'posts.html'
-    context_object_name = 'posts'
+class CategoryList(ListView):
+    model = Category
+    ordering = 'name'
+    template_name = 'news.html'
+    context_object_name = 'categorys'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -15,7 +15,7 @@ class PostList(ListView):
         return context
 
 
-class PostDetail(DetailView):
-    model = Post
-    template_name = 'post.html'
-    context_object_name = 'post'
+class CategoryDetail(DetailView):
+    model = Category
+    template_name = 'news.html'
+    context_object_name = 'category'
