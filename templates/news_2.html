@@ -3,11 +3,10 @@
 
 <!-- Название у нас будет Product -->
 {% block title %}
-post
+category
 {% endblock title %}
 
 <!-- В контенте на странице мы выводим сам товар, идентификатор которого был передан в url -->
 {% block content %}
-<h1>Все новости</h1>
-{{ posts }}
+{{ category }}
 {% endblock content %}

@@ -7,5 +7,4 @@ urlpatterns = [
    # Делаем так, чтобы все адреса из нашего приложения (simpleapp/urls.py)
    # подключались к главному приложению с префиксом products/.
    path('category/', include('News_portal.urls')),
-   path('post/', include('News_portal.urls')),
 ]
