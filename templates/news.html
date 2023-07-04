@@ -1,13 +1,18 @@
-<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
 {% extends 'flatpages/default.html' %}
 
-<!-- Название у нас будет Product -->
 {% block title %}
-category
+Поиск
 {% endblock title %}
 
-<!-- В контенте на странице мы выводим сам товар, идентификатор которого был передан в url -->
 {% block content %}
-<h1>Категории</h1>
-{{ categorys }}
+    <h2>Поиск статей</h2>
+    <h3>{{ time_in|date:'d.m.Y' }}</h3>
+    {% for post in news %}
+     <div>
+     {{ post.author }}
+     {{ post.title }}
+     {{ post.created_at|date:'d.m.Y' }}
+     {{ post.title|truncatechars:20 }}
+     </div>
+    {% endfor %}
 {% endblock content %}
